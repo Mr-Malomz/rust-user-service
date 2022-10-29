@@ -9,15 +9,27 @@ pub struct User {
     pub phone_number: String,
 }
 
+#[derive(Deserialize, Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct CreateResponse {
+    pub id: String,
+}
 
-#[derive(Deserialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct Records {
-    pub records: Vec<User>
+    pub records: Vec<User>,
 }
 
 #[derive(Serialize, Debug, Clone)]
-pub struct APIResponse {
+pub struct APIResponse<T> {
     pub status: u16,
     pub message: String,
-    pub data: String,
+    pub data: Option<T>,
+}
+
+#[derive(Serialize, Debug, Clone)]
+pub struct APIErrorResponse {
+    pub status: u16,
+    pub message: String,
+    pub data: Option<String>,
 }
