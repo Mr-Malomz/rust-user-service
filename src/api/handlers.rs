@@ -31,6 +31,7 @@ pub async fn create_user(data: Json<User>) -> HttpResponse {
         first_name: data.first_name.clone(),
         last_name: data.last_name.clone(),
         phone_number: data.phone_number.clone(),
+        avatar: None,
     };
     let user_details = UserService::create_user(new_user).await;
 
