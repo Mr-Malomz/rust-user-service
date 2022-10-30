@@ -11,14 +11,14 @@ pub struct User {
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
-#[serde(rename_all = "camelCase")]
-pub struct CreateResponse {
-    pub id: String,
+pub struct Records {
+    pub records: Vec<User>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
-pub struct Records {
-    pub records: Vec<User>,
+#[serde(rename_all = "camelCase")]
+pub struct CreateResponse {
+    pub id: String,
 }
 
 #[derive(Serialize, Debug, Clone)]

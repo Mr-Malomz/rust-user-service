@@ -22,7 +22,7 @@ impl UserService {
     }
 
     pub async fn create_user(new_user: User) -> Result<CreateResponse, Error> {
-        let url = "NETLIFY FUNCTION CREATE URL";
+        let url = "<NETLIFY FUNCTION CREATE URL>";
         let json_body = User {
             id: None,
             first_name: new_user.first_name,
